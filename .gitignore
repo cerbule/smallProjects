@@ -1,0 +1,9 @@
+# Default ignored files
+src/.iml
+/workspace.xml
+/description.html
+/encodings.xml
+/misc.xml
+/modules.xml
+/project-template.xml
+/vcs.xml
