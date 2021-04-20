@@ -1,4 +1,6 @@
-package com.example.newOne;
+package com.example.oOo;
+
+import com.example.newOne.Weapon;
 
 import java.util.ArrayList;
 
@@ -117,11 +119,33 @@ public class Player {
         return false;
     }
 
+    public boolean dropLoot(String name) {
+        for (Loot item : inventory) {
+            if (item.getName().contains(name)) {
+                this.inventory.remove(item);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void showInventory() {
 
         for (Loot item : inventory) {
             System.out.println(item.getName());
         }
         System.out.println("=====================");
+    }
+
+    public int score() {
+        int total = 0;
+       // for (int i = 0; i < inventory.size(); i++) {
+         // Loot currentLoot = inventory.get(i);
+        for (Loot currentLoot : inventory) {
+
+            System.out.println(currentLoot.getName() + " is worth " + currentLoot.getValue());
+            total = total + currentLoot.getValue();
+        }
+        return total;
     }
 }
